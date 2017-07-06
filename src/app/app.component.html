@@ -1,3 +1,32 @@
-<h1>
-  {{title}}
-</h1>
+<h1>Attributes Directives</h1>
+<h2>
+  ngClass/ngStyle
+</h2>
+<div [ngClass]="{border: true, background: true}"></div>
+<!--<div [class.border]="true"></div>-->
+<!--<div [ngStyle]="{'background-color': 'blue'}"></div>-->
+<hr>
+<h1>Custom Directives</h1>
+<div [dirHighlight]="'blue'" [defaultColor]="'red'">Some text !!</div>
+<hr>
+<h1>Structural directives</h1>
+<h2>*ngIf</h2>
+<div *ngIf="switch">Conditional Text</div>
+<button (click)="onSwitch()">Switch</button>
+
+<h2>ngFor</h2>
+<ul>
+  <li *ngFor="let item of items; let i = index">
+    {{item}} - (Index- {{i}})
+  </li>
+</ul>
+<h2>ngSwitch</h2>
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="10">10</p>
+  <p *ngSwitchCase="100">100</p>
+  <p *ngSwitchDefault>Default</p>
+</div>
+<hr>
+<h2>Unless directive</h2>
+<div *dirUnless="switch">Conditional text</div>
+
